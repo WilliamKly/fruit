@@ -3,16 +3,18 @@ import { useEffect, useState } from "react";
 import { QuantityInput } from "../../../../components/QuantityInput";
 import { RegularText, TitleText } from "../../../../components/Typography";
 import { AddCartWrapper, CardFooter, Description, FruitCardContainer, Name, Tags } from "./styles";
-import api from "../../../../services/api";
+
+interface FruitsProps {
+  name: string;
+}
 
 export function FruitCard() {
-  const [fruits, setFruits] = useState([])
+  const [fruits, setFruits] = useState<FruitsProps[]>([])
 
   useEffect(() => {
-    api.get('banana').then(({data}) => {
-      setFruits(data)
-    })
-    console.log(fruits)
+    fetch('http://localhost:3333/')
+    .then(response => response.json())
+    .then(data => setFruits(data))
   }, [])
 
   return (
@@ -25,8 +27,9 @@ export function FruitCard() {
     </Tags>
 
     <Name>
-      Melancia
+      Uva
     </Name>
+
     <Description>
       Essa melancia é importada do sul de Minas
     </Description>
