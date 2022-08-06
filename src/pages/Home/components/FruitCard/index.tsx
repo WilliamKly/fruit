@@ -55,7 +55,7 @@ export function FruitCard({ fruit }: FruitProps) {
     </Tags>
 
     <Description>
-      Essa melancia é importada do sul de Minas
+      As melhores frutas do Brasil!
     </Description>
 
     <CardFooter>
