@@ -13,7 +13,7 @@ export function Router() {
         <Route path="/" element={<HomePage />} />
         <Route path="/completeOrder" element={<CompleteOrderPage />} />
         <Route path="orderConfirmed" element={<OrderConfirmedPage />}/>
-        <Route path="/InfoNutritions:idNut" element={<InfoNutritions />}/>
+        <Route path="/infoNutritions/:id" element={<InfoNutritions />}/>
       </Route>
     </Routes>
   )

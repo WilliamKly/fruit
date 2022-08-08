@@ -1,8 +1,5 @@
-import { Info } from "phosphor-react";
 import { useCallback, useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
 import { RegularText } from "../../components/Typography";
-import { FruitCard } from "../Home/components/FruitCard";
 import { FruitCardContainer, Name } from "../Home/components/FruitCard/styles";
 import { FruitList } from "../Home/components/OurFruits/styles";
 import { InfoNutritionsContainer } from "./styles";
@@ -18,7 +15,6 @@ interface FruitsProps {
     sugar?: number;
   }
 }
-
 
 export function InfoNutritions() {
 
@@ -47,7 +43,7 @@ export function InfoNutritions() {
               <RegularText>protein: {nutrition.nutritions.protein}</RegularText>
               <RegularText>sugar: {nutrition.nutritions.sugar}</RegularText>
             </FruitCardContainer>
-          </div>
+        </div>
         ))}
       </FruitList>
     </InfoNutritionsContainer>

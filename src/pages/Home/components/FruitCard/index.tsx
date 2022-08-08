@@ -25,8 +25,7 @@ interface FruitProps {
 }
 
 export function FruitCard({ fruit }: FruitProps) {
-
-  const { idNut } = useParams<{idNut: string}>()
+  const id = fruit.id
 
   const [quantity, setQuantity] = useState(1);
   
@@ -84,7 +83,7 @@ export function FruitCard({ fruit }: FruitProps) {
       </AddCartWrapper>
 
       <BtnCont>
-        <Link to={`/InfoNutritions/${idNut}`}>
+        <Link to={`/InfoNutritions/${id}`}>
           <button type="button">{<Info />}</button>
         </Link>
       </BtnCont>
