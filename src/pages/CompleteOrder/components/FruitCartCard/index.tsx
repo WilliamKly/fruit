@@ -42,6 +42,7 @@ export function FruitCartCard({ fruit }: FruitCartCardProps) {
               REMOVER
             </RemoveButton>
           </ActionsContainer>
+          
         </div>
       </div>
       <p>R$ {formattedPrice}</p>

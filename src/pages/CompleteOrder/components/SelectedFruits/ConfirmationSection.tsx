@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Button } from "../../../../components/Button";
 import { RegularText } from "../../../../components/Typography";
+import { CartItem } from "../../../../contexts/CartContext";
 import { useCart } from "../../../../hooks/useCart";
 import { formatMoney } from "../../../../utils/formatMoney";
-import { ConfirmationSectionContainer } from "./styles";
+import { BtnContainer, ConfirmationSectionContainer } from "./styles";
 
 const DELIVERY_PRICE = 2.5
 
@@ -13,6 +15,9 @@ export function ConfirmationSection() {
   const formattedItemsTotal = formatMoney(cartItemsTotal)
   const formattedCartTotal = formatMoney(cartTotal)
   const formattedDeliveryPrice = formatMoney(DELIVERY_PRICE)
+
+  //console.log(cartQuantity)
+  const { cleanCart } = useCart()
 
   return (
     <ConfirmationSectionContainer>
@@ -30,6 +35,7 @@ export function ConfirmationSection() {
       </div>
 
       <Button text="Confirmar pedido" disabled={cartQuantity <= 0} type="submit"/>
+      <BtnContainer type="submit" onClick={cleanCart} disabled={cartQuantity <= 0}>ESVAZIAR CARRINHO</BtnContainer>
     </ConfirmationSectionContainer>
   )
 }

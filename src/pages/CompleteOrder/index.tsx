@@ -27,6 +27,7 @@ const confirmOrderFormValidationSchema = zod.object({
     }
   })
 });
+
 export type OrderData = zod.infer<typeof confirmOrderFormValidationSchema>
 
 type ConfirmOrderFormData = OrderData;

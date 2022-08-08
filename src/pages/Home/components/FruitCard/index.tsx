@@ -1,14 +1,23 @@
-import { ShoppingCart } from "phosphor-react";
-import { useEffect, useState } from "react";
+import { Info, ShoppingCart } from "phosphor-react";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { QuantityInput } from "../../../../components/QuantityInput";
 import { RegularText, TitleText } from "../../../../components/Typography";
 import { useCart } from "../../../../hooks/useCart";
+
 import { formatMoney } from "../../../../utils/formatMoney";
-import { AddCartWrapper, CardFooter, Description, FruitCardContainer, Name, Tags } from "./styles";
+import { AddCartWrapper, BtnCont, CardFooter, Description, FruitCardContainer, Name, Tags } from "./styles";
 
 export interface Fruit {
   name: string;
   id: number;
+  nutritions: {
+    calories?: number;
+    carbohydrates?: number;
+    fat?: number;
+    protein?: number;
+    sugar?: number;
+  }
 }
 
 interface FruitProps {
@@ -16,8 +25,9 @@ interface FruitProps {
 }
 
 export function FruitCard({ fruit }: FruitProps) {
-  const [quantity, setQuantity] = useState(1);
 
+  const [quantity, setQuantity] = useState(1);
+  
   function handleIncrease() {
     setQuantity(state => state + 1)
   }
@@ -33,19 +43,13 @@ export function FruitCard({ fruit }: FruitProps) {
       ...fruit,
       quantity,
     }
+    //console.log(fruitToAdd)
     addFruitToCart(fruitToAdd)
   }
 
   const price = 9.9
   const formattedPrice = formatMoney(price)
-  const [fruits, setFruits] = useState<FruitProps[]>([])
-
-  useEffect(() => {
-    fetch('http://localhost:3333/')
-    .then(response => response.json())
-    .then(data => setFruits(data))
-  }, [])
-
+  
   return (
    <FruitCardContainer>
 
@@ -57,7 +61,7 @@ export function FruitCard({ fruit }: FruitProps) {
     <Description>
       As melhores frutas do Brasil!
     </Description>
-
+    
     <CardFooter>
       <div>
         <RegularText size="s">R$</RegularText>
@@ -70,11 +74,21 @@ export function FruitCard({ fruit }: FruitProps) {
           onDecrease={handleDecrease}
           quantity={quantity}
         />
+        
         <button onClick={handleAddToCart}>
           <ShoppingCart weight="fill" size={22}/>
         </button>
+        
       </AddCartWrapper>
+
+      <BtnCont>
+        <NavLink to="/InfoNutritions">
+          <button type="button">{<Info />}</button>
+        </NavLink>
+      </BtnCont>
+    
     </CardFooter>
+    
    </FruitCardContainer> 
   )
 }

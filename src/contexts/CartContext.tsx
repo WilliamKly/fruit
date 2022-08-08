@@ -43,15 +43,16 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
   function addFruitToCart(fruit: CartItem) {
     const fruitAlreadyExistsInCart = cartItems.findIndex((cartItem) => cartItem.id === fruit.id)
-
+    //console.log(cartItems)
     const newCart = produce(cartItems, (draft) => {
       if(fruitAlreadyExistsInCart < 0) {
         draft.push(fruit)
+        
       } else {
         draft[fruitAlreadyExistsInCart].quantity += fruit.quantity;
       }
     })
-
+    
     setCartItems(newCart)
   }
 

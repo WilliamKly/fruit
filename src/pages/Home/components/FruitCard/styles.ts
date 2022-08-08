@@ -17,6 +17,7 @@ export const FruitCardContainer = styled.div`
     height: 7.5rem;
     margin-top: -1.25rem;
   }
+  
 `;
 
 export const Tags = styled.div`
@@ -69,6 +70,24 @@ export const CardFooter = styled.div`
     p {
       line-height: 0.75rem;
     }
+    
+  }
+  > button {
+    width: 2.375rem;
+    height: 2.375rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${({ theme }) => theme.colors["brand-purple-dark"]};
+    color: ${({ theme }) => theme.colors["base-card"]};
+    border-radius: 6px;
+    margin-left: 0.3rem;
+    transition: 0.4s;
+
+    &:hover {
+      background: ${({ theme }) => theme.colors["brand-purple"]};
+    }
   }
 `;
 
@@ -93,3 +112,23 @@ export const AddCartWrapper = styled.div`
     }
   }
 `;
+
+export const BtnCont = styled.button`
+  button {
+    width: 2.375rem;
+    height: 2.375rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${({ theme }) => theme.colors["brand-purple-dark"]};
+    color: ${({ theme }) => theme.colors["base-card"]};
+    border-radius: 6px;
+    margin-left: 0.3rem;
+    transition: 0.4s;
+
+    &:hover {
+      background: ${({ theme }) => theme.colors["brand-purple"]};
+    }
+  }
+`

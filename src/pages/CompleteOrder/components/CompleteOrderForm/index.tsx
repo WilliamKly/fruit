@@ -26,7 +26,7 @@ export function CompleteOrderForm() {
       </FormSectionContainer>
       <FormSectionContainer>
         <SectionTitle 
-          title="Pagametno"
+          title="Pagamento"
           subtitle="O pagamento é realizado no momento da entrega"
           icon={<CurrencyDollar color={colors["brand-purple"]} size={22}/>}
         />
