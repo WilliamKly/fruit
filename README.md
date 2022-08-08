@@ -1,5 +1,7 @@
 Para rodar a aplicação:
 
+Primeiro rode npm i na pasta api para instalar as dependências e depois na pasta src rode yarn para instalar as dependências
+
 Entre na pasta api com o comando: cd api
 depois rode npm start dentro da pasta api
 
