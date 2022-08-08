@@ -1,7 +1,5 @@
-import { Info } from "phosphor-react";
+
 import { useCallback, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Button } from "../../../../components/Button";
 import { TitleText } from "../../../../components/Typography";
 import { FruitCard } from "../FruitCard";
 import { Name } from "../FruitCard/styles";

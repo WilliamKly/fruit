@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { Button } from "../../../../components/Button";
 import { RegularText } from "../../../../components/Typography";
-import { CartItem } from "../../../../contexts/CartContext";
 import { useCart } from "../../../../hooks/useCart";
 import { formatMoney } from "../../../../utils/formatMoney";
 import { BtnContainer, ConfirmationSectionContainer } from "./styles";
@@ -16,7 +14,6 @@ export function ConfirmationSection() {
   const formattedCartTotal = formatMoney(cartTotal)
   const formattedDeliveryPrice = formatMoney(DELIVERY_PRICE)
 
-  //console.log(cartQuantity)
   const { cleanCart } = useCart()
 
   return (

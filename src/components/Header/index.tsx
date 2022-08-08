@@ -11,7 +11,7 @@ export function Header() {
     <HeaderContainer>
       <div className="container">
         <NavLink to="/">
-          <img src={logoImg} width={40} alt="Logo da empresa de hortifruti" />
+          <img src={logoImg} width={50} alt="Logo da empresa de hortifruti" />
         </NavLink>
 
         <HeaderButtonsContainer>

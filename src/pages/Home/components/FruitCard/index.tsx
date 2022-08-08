@@ -1,17 +1,16 @@
 import { Info, ShoppingCart } from "phosphor-react";
 import { useState } from "react";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { QuantityInput } from "../../../../components/QuantityInput";
 import { RegularText, TitleText } from "../../../../components/Typography";
 import { useCart } from "../../../../hooks/useCart";
-
 import { formatMoney } from "../../../../utils/formatMoney";
-import { AddCartWrapper, BtnCont, CardFooter, Description, FruitCardContainer, Name, Tags } from "./styles";
+import { AddCartWrapper, BtnCont, CardFooter, Description, FruitCardContainer, Tags } from "./styles";
 
 export interface Fruit {
   name: string;
   id: number;
-  nutritions: {
+  nutritions?: {
     calories?: number;
     carbohydrates?: number;
     fat?: number;
@@ -44,7 +43,7 @@ export function FruitCard({ fruit }: FruitProps) {
       ...fruit,
       quantity,
     }
-    //console.log(fruitToAdd)
+
     addFruitToCart(fruitToAdd)
   }
 
