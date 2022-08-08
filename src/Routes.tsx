@@ -6,13 +6,14 @@ import { InfoNutritions } from "./pages/InfoNutritions";
 import { OrderConfirmedPage } from "./pages/OrderConfirmed";
 
 export function Router() {
+
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />} >
         <Route path="/" element={<HomePage />} />
         <Route path="/completeOrder" element={<CompleteOrderPage />} />
         <Route path="orderConfirmed" element={<OrderConfirmedPage />}/>
-        <Route path="/InfoNutritions" element={<InfoNutritions />}/>
+        <Route path="/InfoNutritions:idNut" element={<InfoNutritions />}/>
       </Route>
     </Routes>
   )

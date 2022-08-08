@@ -32,12 +32,6 @@ export function OurFruits() {
     getfruits()
   }, [getfruits])
 
-  console.log(setFruits.name)
-
-  function handleMouse() {
-    console.log("Mouse")
-  }
-
   return (
     <OurFruitsContainer className="container">
       <TitleText size="l" color="subtitle">

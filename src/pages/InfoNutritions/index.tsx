@@ -1,8 +1,9 @@
 import { Info } from "phosphor-react";
 import { useCallback, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
+import { RegularText } from "../../components/Typography";
 import { FruitCard } from "../Home/components/FruitCard";
-import { Name } from "../Home/components/FruitCard/styles";
+import { FruitCardContainer, Name } from "../Home/components/FruitCard/styles";
 import { FruitList } from "../Home/components/OurFruits/styles";
 import { InfoNutritionsContainer } from "./styles";
 
@@ -38,11 +39,14 @@ export function InfoNutritions() {
        <FruitList>
       {fruits.map((nutrition) => (
           <div key={nutrition.id}>
-            <Name>calories: {nutrition.nutritions.calories}</Name>
-            <Name>carbohydrates: {nutrition.nutritions.carbohydrates}</Name>
-            <Name>fat: {nutrition.nutritions.fat}</Name>
-            <Name>protein: {nutrition.nutritions.protein}</Name>
-            <Name>sugar: {nutrition.nutritions.sugar}</Name>
+            <FruitCardContainer>
+              <Name>Fruta: {nutrition.name}</Name>
+              <RegularText>calories: {nutrition.nutritions.calories}</RegularText>
+              <RegularText>carbohydrates: {nutrition.nutritions.carbohydrates}</RegularText>
+              <RegularText>fat: {nutrition.nutritions.fat}</RegularText>
+              <RegularText>protein: {nutrition.nutritions.protein}</RegularText>
+              <RegularText>sugar: {nutrition.nutritions.sugar}</RegularText>
+            </FruitCardContainer>
           </div>
         ))}
       </FruitList>

@@ -1,6 +1,6 @@
 import { Info, ShoppingCart } from "phosphor-react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { QuantityInput } from "../../../../components/QuantityInput";
 import { RegularText, TitleText } from "../../../../components/Typography";
 import { useCart } from "../../../../hooks/useCart";
@@ -25,6 +25,8 @@ interface FruitProps {
 }
 
 export function FruitCard({ fruit }: FruitProps) {
+
+  const { idNut } = useParams<{idNut: string}>()
 
   const [quantity, setQuantity] = useState(1);
   
@@ -82,9 +84,9 @@ export function FruitCard({ fruit }: FruitProps) {
       </AddCartWrapper>
 
       <BtnCont>
-        <NavLink to="/InfoNutritions">
+        <Link to={`/InfoNutritions/${idNut}`}>
           <button type="button">{<Info />}</button>
-        </NavLink>
+        </Link>
       </BtnCont>
     
     </CardFooter>
